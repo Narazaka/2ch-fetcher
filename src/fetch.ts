@@ -1,5 +1,6 @@
 import * as iconv from "iconv-lite";
 import * as request from "request-promise-native";
+// tslint:disable-next-line no-var-requires no-require-imports
 const chardet = require("chardet");
 
 export async function fetch(url: string) {

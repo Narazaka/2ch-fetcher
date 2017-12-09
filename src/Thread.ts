@@ -33,9 +33,9 @@ export class Thread {
 
     parseLine(index: number, line: string) {
         const [name, email, dateAndIdStr, body] = line.split(/<>/);
-        if (!dateAndIdStr || !/\d/.test(dateAndIdStr)) return;
+        if (!dateAndIdStr || !/\d/.test(dateAndIdStr)) return undefined;
         const result = this.dateAndIdStrRe.exec(dateAndIdStr);
-        if (!result) return;
+        if (!result) return undefined;
         const date = moment.tz(
             [
                 Number(result[1]),
