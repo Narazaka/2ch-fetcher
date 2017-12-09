@@ -9,7 +9,18 @@
   "author": "narazaka",
   "license": "MIT",
   "devDependencies": {
+    "@types/iconv-lite": "^0.0.1",
+    "@types/moment-timezone": "^0.5.2",
+    "@types/request-promise-native": "^1.0.10",
     "tslint": "^5.8.0",
     "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "chardet": "^0.4.2",
+    "iconv-lite": "^0.4.19",
+    "moment": "^2.19.3",
+    "moment-timezone": "^0.5.14",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
   }
 }
