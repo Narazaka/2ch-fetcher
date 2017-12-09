@@ -4,6 +4,9 @@
   "description": "2ch fetcher",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "prepublish": "npm run dist",
     "dist": "rimraf lib && tsc",
