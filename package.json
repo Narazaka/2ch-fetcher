@@ -1,7 +1,7 @@
 {
-  "name": "old2ch",
+  "name": "2ch-fetcher",
   "version": "1.0.0",
-  "description": "2ch reader",
+  "description": "2ch fetcher",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
