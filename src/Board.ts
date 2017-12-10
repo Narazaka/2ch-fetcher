@@ -13,6 +13,9 @@ export class Board {
         this.category = category;
     }
 
+    // tslint:disable-next-line no-non-null-assertion
+    get id() { return /([^\/]+)\/?$/.exec(this.url)![1]; }
+
     get subjectTxtUrl() { return `${this.url}subject.txt`; }
 
     threadDatUrl(dat: string) { return `${this.url}dat/${dat}`; }
@@ -26,6 +29,7 @@ export class Board {
     parseContent(content: string) {
         return content
             .split(/\r?\n/)
+            .filter((line) => line.length)
             .map((line) => line.split(/<>/))
             .map(([dat, titleAndCount]) => {
                 const result = this.titleAndCountRe.exec(titleAndCount);

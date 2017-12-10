@@ -14,6 +14,12 @@ export class Thread {
         this.count = count;
     }
 
+    // tslint:disable-next-line no-non-null-assertion
+    get datName() { return /([^\/]+)$/.exec(this.datUrl)![1]; }
+
+    // tslint:disable-next-line no-non-null-assertion
+    get datId() { return /([^\/]+)\.dat$/.exec(this.datUrl)![1]; }
+
     async fetchPosts() {
         const posts = this.parseContent(await fetch(this.datUrl));
 
