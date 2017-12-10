@@ -54,7 +54,7 @@ export class Thread {
             ],
             "Asia/Tokyo",
         ).toDate();
-        const id = result[8].length ? result[8] : undefined;
+        const id = result[8] && result[8].length ? result[8] : undefined;
 
         return new Post({index, name, email, date, id, body});
     }
