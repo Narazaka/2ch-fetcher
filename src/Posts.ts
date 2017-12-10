@@ -26,7 +26,7 @@ export class Posts {
     }
 
     indexRange(startIndex?: number, endIndex?: number, includeDeleted?: true): Array<Post | undefined>;
-    indexRange(startIndex: number, endIndex: number, includeDeleted: false): Post[];
+    indexRange(startIndex: number | undefined, endIndex: number | undefined, includeDeleted: false): Post[];
     indexRange(startIndex = 1, endIndex = 1001, includeDeleted = true) {
         const selected = this.posts.slice(startIndex - 1, endIndex - 1);
 
