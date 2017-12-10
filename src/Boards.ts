@@ -1,7 +1,7 @@
 import { Board } from "./Board";
 
 export class Boards {
-    readonly boards: Board[];
+    private readonly boards: Board[];
 
     constructor(boards: Board[]) {
         this.boards = boards;
@@ -9,7 +9,15 @@ export class Boards {
 
     get names() { return this.boards.map((board) => board.name); }
 
-    board(name: string) {
+    all() {
+        return this.boards;
+    }
+
+    name(name: string) {
         return this.boards.find((board) => board.name === name) as Board;
+    }
+
+    id(id: string) {
+        return this.boards.find((board) => board.id === id) as Board;
     }
 }

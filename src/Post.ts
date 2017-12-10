@@ -23,4 +23,14 @@ export class Post implements PostProperties {
         this.id = id;
         this.body = body;
     }
+
+    get nameWithoutTrip() {
+        return this.name.replace(/ <\/b>◆.*$/, "");
+    }
+
+    get trip() {
+        const result = /◆(.+) <b>$/.exec(this.name);
+
+        return result ? result[1] : undefined;
+    }
 }

@@ -1,7 +1,7 @@
 import { Thread } from "./Thread";
 
 export class Threads {
-    readonly threads: Thread[];
+    private readonly threads: Thread[];
 
     constructor(threads: Thread[]) {
         this.threads = threads;
@@ -9,11 +9,23 @@ export class Threads {
 
     get titles() { return this.threads.map((thread) => thread.title); }
 
-    thread(title: string) {
+    all() {
+        return this.threads;
+    }
+
+    title(title: string) {
         return this.threads.find((thread) => thread.title === title) as Thread;
     }
 
-    searchThreads(title: string | RegExp) {
+    datId(datId: string) {
+        return this.threads.find((thread) => thread.datId === datId) as Thread;
+    }
+
+    datName(datName: string) {
+        return this.threads.find((thread) => thread.datName === datName) as Thread;
+    }
+
+    searchByTitle(title: string | RegExp) {
         return this.threads.filter((thread) => thread.title && thread.title.match(title));
     }
 }
