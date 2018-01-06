@@ -1,5 +1,7 @@
 # 2ch-fetcher
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Narazaka/2ch-fetcher.svg)](https://greenkeeper.io/)
+
 2ch fetcher
 
 ## Install
