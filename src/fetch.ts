@@ -3,7 +3,7 @@ import * as request from "request-promise-native";
 // tslint:disable-next-line no-var-requires no-require-imports
 const chardet = require("chardet");
 
-export const requestOptions = {};
+export const requestOptions: request.RequestPromiseOptions = {};
 
 export async function fetch(url: string) {
     const responseBuffer = await request(url, {...requestOptions, encoding: null});
