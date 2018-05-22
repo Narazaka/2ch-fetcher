@@ -41,5 +41,5 @@ export class Board {
             });
     }
 
-    private static readonly titleAndCountRe = /^(.+)\s+\((\d+)\)$/;
+    private static readonly titleAndCountRe = /^(.+?)\s+\((\d+)\)$/;
 }

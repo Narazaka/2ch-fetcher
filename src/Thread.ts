@@ -37,7 +37,7 @@ export class Thread {
         return posts;
     }
 
-    parseLine(index: number, line: string) {
+    parseLine(index: number, line: string) { // tslint:disable-line prefer-function-over-method
         const [name, email, dateAndIdStr, body] = line.split(/<>/);
         if (!dateAndIdStr || !/\d/.test(dateAndIdStr)) return undefined;
         const result = Thread.dateAndIdStrRe.exec(dateAndIdStr);
