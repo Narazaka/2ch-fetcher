@@ -20,6 +20,12 @@ export class Thread {
     // tslint:disable-next-line no-non-null-assertion
     get datId() { return /([^\/]+)\.dat$/.exec(this.datUrl)![1]; }
 
+    // tslint:disable-next-line no-non-null-assertion
+    get domain() { return /^\w+:\/\/([^/]+)/.exec(this.datUrl)![1]; }
+
+    // tslint:disable-next-line no-non-null-assertion
+    get boardId() { return /^\w+:\/\/[^/]+\/([^/]+)/.exec(this.datUrl)![1]; }
+
     async fetchPosts() {
         const posts = this.parseContent(await fetch(this.datUrl));
 
