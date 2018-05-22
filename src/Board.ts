@@ -32,7 +32,7 @@ export class Board {
             .filter((line) => line.length)
             .map((line) => line.split(/<>/))
             .map(([dat, titleAndCount]) => {
-                const result = this.titleAndCountRe.exec(titleAndCount);
+                const result = Board.titleAndCountRe.exec(titleAndCount);
                 if (result) {
                     return new Thread(this.threadDatUrl(dat), result[1], Number(result[2]));
                 } else {
@@ -41,5 +41,5 @@ export class Board {
             });
     }
 
-    private readonly titleAndCountRe = /^(.+)\s+\((\d+)\)$/;
+    private static readonly titleAndCountRe = /^(.+?)\s+\((\d+)\)$/;
 }

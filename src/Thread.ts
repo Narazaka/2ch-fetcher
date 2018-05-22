@@ -37,10 +37,10 @@ export class Thread {
         return posts;
     }
 
-    parseLine(index: number, line: string) {
+    parseLine(index: number, line: string) { // tslint:disable-line prefer-function-over-method
         const [name, email, dateAndIdStr, body] = line.split(/<>/);
         if (!dateAndIdStr || !/\d/.test(dateAndIdStr)) return undefined;
-        const result = this.dateAndIdStrRe.exec(dateAndIdStr);
+        const result = Thread.dateAndIdStrRe.exec(dateAndIdStr);
         if (!result) return undefined;
         const date = moment.tz(
             [
@@ -53,11 +53,12 @@ export class Thread {
                 Number(result[7]) * 10,
             ],
             "Asia/Tokyo",
-        ).toDate();
+        )
+            .toDate();
         const id = result[8] && result[8].length ? result[8] : undefined;
 
         return new Post({index, name, email, date, id, body});
     }
 
-    private readonly dateAndIdStrRe = /^(\d+)\D+(\d+)\D+(\d+)\D+(\d+)\D+(\d+)\D+(\d+)\D+(\d+)(?:\s+ID:(.+)$)?/;
+    private static readonly dateAndIdStrRe = /^(\d+)\D+(\d+)\D+(\d+)\D+(\d+)\D+(\d+)\D+(\d+)\D+(\d+)(?:\s+ID:(.+)$)?/;
 }
