@@ -26,6 +26,9 @@ export class Thread {
     // tslint:disable-next-line no-non-null-assertion
     get boardId() { return /^\w+:\/\/[^/]+\/([^/]+)/.exec(this.datUrl)![1]; }
 
+    // tslint:disable-next-line max-line-length
+    get readUrl() { return this.datUrl.replace(/^(\w+:\/\/[^/]+)\/([^/]+)\/dat\/(\d+)\.dat$/, "$1/test/read.cgi/$2/$3"); }
+
     async fetchPosts() {
         const posts = this.parseContent(await fetch(this.datUrl));
 
