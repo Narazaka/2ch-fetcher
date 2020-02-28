@@ -17,7 +17,7 @@
   "devDependencies": {
     "@types/moment-timezone": "^0.5.4",
     "@types/request-promise-native": "^1.0.14",
-    "rimraf": "^2.6.2",
+    "rimraf": "^3.0.2",
     "tslint": "^5.10.0",
     "typescript": "^2.8.3"
   },
